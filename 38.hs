@@ -26,6 +26,7 @@ is9DigitPandigital9 x = isPandigital9 x && is9Digits x
 
 concatProducts x n = concat [show (x * y) | y <- [1..n]]
 
+answer :: Int
 answer =
   let ps = filter is9DigitPandigital9 [concatProducts x y | x <- [1..11000], y <- [1..13]]
-  in maximum $ (map read ps :: [Int])
+  in read $ last ps
